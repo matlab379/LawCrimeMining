@@ -57,7 +57,7 @@ class CrimeSpider:
             data['content'] = [i.replace(' ', '').replace('\t','') for i in re.split('[\n\r]', content) if
                                i.replace(' ', '').replace('\t','')]
             print(data)
-            self.db.insert(data)
+            self.db.insert_one(data)
 
     '''采集主函数'''
     def crime_spider(self):

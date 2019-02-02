@@ -75,7 +75,7 @@ class LawSpider:
                         data = self.case_parser(case)
                         if data:
                             try:
-                                self.db.insert(data)
+                                self.db.insert_one(data)
                             except Exception as e:
                                 print(e)
                     except:

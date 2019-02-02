@@ -90,7 +90,7 @@ class CrimeSpider:
         data['title'] = title.replace('-司法考试-中法网学校', '')
         data['content'] = [i.replace(' ','') for i in re.split('[\n\r]', content) if i.replace(' ','').replace('\t','') and '分享到' not in i and '打印文本' not in i and '关闭窗口' not in i and 'js' not in i]
         print(data)
-        self.db.insert(data)
+        self.db.insert_one(data)
 
     '''采集主函数'''
     def crime_spider(self):
